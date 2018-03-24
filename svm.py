@@ -9,7 +9,6 @@ from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val
 
 dataframe = pd.read_csv("./amazon_cells_labelled.csv")
 
-# col = dataframe.ix[:,1]
 x=dataframe.iloc[:,0]
 y=dataframe.iloc[:,1]
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=42)
@@ -30,6 +29,3 @@ grid_svm = GridSearchCV(pipeline_svm,
 
 grid_svm.fit(x_train, y_train)
 print grid_svm.score(x_test, y_test)
-
-# print grid_svm.predict(x_test)
-# print y_test
